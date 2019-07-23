@@ -1,7 +1,5 @@
 package com.wix.interactable;
 
-import android.support.annotation.Nullable;
-
 import com.facebook.infer.annotation.Assertions;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
@@ -48,7 +46,7 @@ public class InteractableViewManager extends ViewGroupManager<InteractableView> 
     public void receiveCommand(
             InteractableView view,
             int commandType,
-            @Nullable ReadableArray args) {
+             ReadableArray args) {
         Assertions.assertNotNull(view);
         Assertions.assertNotNull(args);
         switch (commandType) {
@@ -78,72 +76,72 @@ public class InteractableViewManager extends ViewGroupManager<InteractableView> 
     }
 
     @ReactProp(name = "verticalOnly")
-    public void setVerticalOnly(InteractableView view, @Nullable boolean verticalOnly) {
+    public void setVerticalOnly(InteractableView view, boolean verticalOnly) {
         view.setVerticalOnly(verticalOnly);
     }
 
     @ReactProp(name = "startOnFront")
-    public void setStartOnFront(InteractableView view, @Nullable boolean startOnFront) {
+    public void setStartOnFront(InteractableView view, boolean startOnFront) {
         view.bringToFront();
     }
 
     @ReactProp(name = "horizontalOnly")
-    public void setHorizontalOnly(InteractableView view, @Nullable boolean horizontalOnly) {
+    public void setHorizontalOnly(InteractableView view, boolean horizontalOnly) {
         view.setHorizontalOnly(horizontalOnly);
     }
 
     @ReactProp(name = "dragEnabled")
-    public void setDragEnabled(InteractableView view, @Nullable boolean dragEnabled) {
+    public void setDragEnabled(InteractableView view, boolean dragEnabled) {
         view.setDragEnabled(dragEnabled);
     }
 
     @ReactProp(name = "snapPoints")
-    public void setSnapTo(InteractableView view, @Nullable ReadableArray snapPoints) {
+    public void setSnapTo(InteractableView view, ReadableArray snapPoints) {
         view.setSnapPoints(RNConvert.interactablePoints(snapPoints));
     }
 
     @ReactProp(name = "springPoints")
-    public void setSprings(InteractableView view, @Nullable ReadableArray springs) {
+    public void setSprings(InteractableView view, ReadableArray springs) {
         view.setSpringsPoints(RNConvert.interactablePoints(springs));
     }
 
     @ReactProp(name = "gravityPoints")
-    public void setGravity(InteractableView view, @Nullable ReadableArray gravityPoints) {
+    public void setGravity(InteractableView view, ReadableArray gravityPoints) {
         view.setGravityPoints(RNConvert.interactablePoints(gravityPoints));
     }
 
     @ReactProp(name = "frictionAreas")
-    public void setFriction(InteractableView view, @Nullable ReadableArray frictionAreas) {
+    public void setFriction(InteractableView view, ReadableArray frictionAreas) {
         view.setFrictionAreas(RNConvert.interactablePoints(frictionAreas));
     }
 
     @ReactProp(name = "alertAreas")
-    public void setAlertAreas(InteractableView view, @Nullable ReadableArray alertAreas) {
+    public void setAlertAreas(InteractableView view, ReadableArray alertAreas) {
         view.setAlertAreas(RNConvert.interactablePoints(alertAreas));
     }
 
     @ReactProp(name = "dragWithSpring")
-    public void setDrag(InteractableView view, @Nullable ReadableMap dragWithSpring) {
+    public void setDrag(InteractableView view, ReadableMap dragWithSpring) {
         view.setDragWithSpring(RNConvert.interactableDrag(dragWithSpring));
     }
 
     @ReactProp(name = "dragToss")
-    public void setDragToss(InteractableView view, @Nullable float dragToss) {
+    public void setDragToss(InteractableView view, float dragToss) {
         view.setDragToss(dragToss);
     }
 
     @ReactProp(name = "reportOnAnimatedEvents")
-    public void setReportOnAnimatedEvents(InteractableView view, @Nullable boolean reportOnAnimatedEvents) {
+    public void setReportOnAnimatedEvents(InteractableView view, boolean reportOnAnimatedEvents) {
         view.setReportOnAnimatedEvents(reportOnAnimatedEvents);
     }
 
     @ReactProp(name = "boundaries")
-    public void setBoundaries(InteractableView view, @Nullable ReadableMap boundaries) {
+    public void setBoundaries(InteractableView view, ReadableMap boundaries) {
         view.setBoundaries(RNConvert.interactableLimit(boundaries));
     }
 
     @ReactProp(name = "initialPosition")
-    public void setInitialPosition(InteractableView view, @Nullable ReadableMap setInitialPosition) {
+    public void setInitialPosition(InteractableView view, ReadableMap setInitialPosition) {
         view.setInitialPosition(RNConvert.pointF(setInitialPosition));
 
     }
